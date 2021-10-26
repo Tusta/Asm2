@@ -16,7 +16,7 @@ app.get ('/Login'), function(req, res) {
 }
 
 var bodyParser = require("body-parser");
-app.use(express.urlencoded({extended: false}))
+app.use(express.urlencoded({extended: true}))
 app.get('/viewproducts',async(req, res)=>{
     let client = await MongoClient.connect(url);
     let dbo = client.db('ProductTesting');

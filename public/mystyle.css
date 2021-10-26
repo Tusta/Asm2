@@ -93,6 +93,7 @@ div.box {
   padding: 0px;
   border: 1px solid gray;
   overflow: hidden;
+  background-color: orange;
 }
 img.boximg {
   text-size-adjust: 100%;
