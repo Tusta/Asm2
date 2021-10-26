@@ -11,12 +11,15 @@ app.use(express.static(publicDir));
 
 app.set('view engine','hbs')
 
+
 app.get ('/Login'), function(req, res) {
     res.render('Login', {login:login});
 }
 
 var bodyParser = require("body-parser");
-app.use(express.urlencoded({extended: true}))
+app.use(bodyParser.urlencoded({extended: false}))
+
+app.use(express.urlencoded({extended: false}))
 app.get('/viewproducts',async(req, res)=>{
     let client = await MongoClient.connect(url);
     let dbo = client.db('ProductTesting');
